@@ -32,6 +32,7 @@ def rc_time (pin_to_circuit):
 lightVal = rc_time(pin_to_circuit)
 
 def write_data():
+    # CSV columns: date, time, lightVal, cpuTemp
      with open("ldrdata.csv", "a") as log: #be sure to specify path to "ldrdata.csv", i.e. /home/pi/bin/ldrdata.csv
           log.write("{0},{1},{2}\n".format(strftime("%Y-%m-%d"),strftime("%H:%M:%S "), lightVal))
 
