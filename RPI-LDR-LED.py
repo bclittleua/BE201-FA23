@@ -1,4 +1,10 @@
+  GNU nano 5.4                                                                                                       light.py *
 #!/usr/bin/python
+# The LDR detects light constantly, too fast for the RPi to read. We slow
+# down process a bit by "charging" a capacitor and reading the resulting value.
+# The LDR has less resistance in bright light, and more resistance in dim light.
+# Thus: DARK = HIGH value, LIGHT = LOW Value
+
 import RPi.GPIO as GPIO
 from time import sleep, strftime, time
 import time
@@ -33,13 +39,12 @@ def write_data():
 def led_func():
     ldr_thresh = 30000 #calibrate this number
     if lightVal >= ldr_thresh:
-        GPIO.output(12,GPIO.HIGH) #if value is greater than thresh, set LED to on
-    if lightVal <- ldr_thresh:
-        GPIO.output(12,GPIO.LOW) #if value is lower than thresh, set LED to off
+        GPIO.output(12,GPIO.HIGH) #if value is greater than thresh, it is DARK, set LED to on
+    if lightVal <= ldr_thresh:
+        GPIO.output(12,GPIO.LOW) #if value is lower than thresh, it is BRIGHT,  set LED to off
 
-    # Main loop
+# Main loop
 while True:
     write_data()
     led_func()
-    time.sleep(1)
     break
