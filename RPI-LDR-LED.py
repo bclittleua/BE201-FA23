@@ -1,4 +1,3 @@
-  GNU nano 5.4                                                                                                       light.py *
 #!/usr/bin/python
 # The LDR detects light constantly, too fast for the RPi to read. We slow
 # down process a bit by "charging" a capacitor and reading the resulting value.
