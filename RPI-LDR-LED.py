@@ -12,14 +12,13 @@ import os
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
-GPIO.setup(12,GPIO.OUT)
+GPIO.setup(12,GPIO.OUT) # LED pin
 
 #define the BOARD pin to read LDR from
 pin_to_circuit = 11
 
 def rc_time (pin_to_circuit):
     count = 0
-
     GPIO.setup(pin_to_circuit, GPIO.OUT)
     GPIO.output(pin_to_circuit, GPIO.LOW)
     time.sleep(0.1)
