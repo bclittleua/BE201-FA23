@@ -31,7 +31,7 @@ def write_data():
           log.write("{0},{1},{2}\n".format(strftime("%Y-%m-%d"),strftime("%H:%M:%S "), lightVal))
 
 def led_func():
-    ldr_thresh = 200 #calibrate this number
+    ldr_thresh = 30000 #calibrate this number
     if lightVal >= ldr_thresh:
         GPIO.output(12,GPIO.HIGH) #if value is greater than thresh, set LED to on
     if lightVal <- ldr_thresh:
