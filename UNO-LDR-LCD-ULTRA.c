@@ -21,8 +21,8 @@ void loop(){
     lcd.print(" ");
   } 
   if (ldrStatus <= 102){
-    lcd.setCursor(1, 1);
-    lcd.print("BRIGHT! ");
+    lcd.setCursor(0, 1);
+    lcd.print("LIGHT! ");
     lcd.print(ldrStatus);
     lcd.print(" ");
   }
